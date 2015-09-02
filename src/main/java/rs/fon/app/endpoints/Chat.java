@@ -1,4 +1,4 @@
-package rs.fon.drawing.endpoints;
+package rs.fon.app.endpoints;
 
 import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
@@ -29,7 +29,6 @@ public class Chat {
 
 	@OnMessage
 	public void onMessage(String s, Session session) throws IOException {
-		System.out.println(s);
 		for (Session peer : session.getOpenSessions()) {
 			peer.getBasicRemote().sendText(s);
 		}

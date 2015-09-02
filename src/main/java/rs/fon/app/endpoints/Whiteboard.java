@@ -1,4 +1,4 @@
-package rs.fon.drawing.endpoints;
+package rs.fon.app.endpoints;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -30,7 +30,6 @@ public class Whiteboard {
 
 	@OnMessage
 	public void onMessage(String s, Session session) throws IOException {
-		System.out.println(s);
 		for (Session peer : session.getOpenSessions()) {
 			if (!peer.equals(session)) {
 				peer.getBasicRemote().sendText(s);
